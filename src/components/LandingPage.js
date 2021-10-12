@@ -1,18 +1,15 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
-const App = () => {
-  const headerStyle = {
-    textAlign: "center",
-    paddingTop: "50px",
-  }
-
-  const formStyle = {
+const LandingPage = () => {
+  const style = {
     textAlign: "center",
     paddingTop: "50px",
   }
 
   const baseUrl = '/api/characters'
+  const history = useHistory()
 
   const [name, setName] = useState('')
 
@@ -23,8 +20,10 @@ const App = () => {
 
     try {
       const resp = await axios.post(baseUrl, { name: name })
-      console.log(resp.data)
+      const id = resp.data.id
       setName('')
+      history.push(`/characters/${id}`)
+
     }
     catch (error) {
       console.log("Error: ", error.message)
@@ -32,12 +31,12 @@ const App = () => {
   }
 
   return (
-    <div className="App">
+    <div>
       <header className="Landing page" >
-        <h2 style={headerStyle}>Create a new character</h2>
+        <h2 style={style}>Create a new character</h2>
       </header>
       <div>
-        <form style={formStyle} className="Character name" onSubmit={onSubmit}>
+        <form style={style} className="Character name" onSubmit={onSubmit}>
           <label>
             Enter a name for your character
             <input value={name} onChange={handleNameChange} />
@@ -46,7 +45,7 @@ const App = () => {
         </form>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default LandingPage
