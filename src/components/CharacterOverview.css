@@ -1,0 +1,19 @@
+label {
+  padding: 10px;
+}
+
+.container {
+    display: flex;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.character-name {
+    flex: 1;
+    background-color: red;
+}  
+
+.character-overview {
+    flex: 1.8;
+    background-color: orange;
+}
