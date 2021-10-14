@@ -11,8 +11,14 @@ const Character = () => {
 
   useEffect(() => {
     const fetchCharacter = async () => {
-      const result = await axios.get(`${baseUrl}/${id}`)
-      setCharacter(result.data)
+      try {
+        const result = await axios.get(`${baseUrl}/${id}`)
+        setCharacter(result.data)
+      }
+      catch (e) {
+        // If status is 400, character id is most likely wrong
+        console.log(e)
+      }
     }
     fetchCharacter()
   }, [id])
