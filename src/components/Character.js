@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import CharacterOverview from './CharacterOverview'
+import LeftRow from './LeftRow'
+import MiddleRow from './MiddleRow'
+import RightRow from './RightRow'
 
 const Character = () => {
   const baseUrl = '/api/characters'
@@ -34,8 +37,13 @@ const Character = () => {
   }
 
   return (
-    <div>
+    <div style={{ height: '1080px' }}>
       <CharacterOverview character={character} updateCharacter={updateCharacter} />
+      <div style={ {display: 'flex', height: '80%', margin: '40px', marginTop: 0} } className="rowContainer">
+        <LeftRow character={character} updateCharacter={updateCharacter} />
+        <MiddleRow character={character} updateCharacter={updateCharacter} />
+        <RightRow character={character} updateCharacter={updateCharacter} />
+      </div>
       <button onClick={() => console.log(character)}>values?</button>
       <button onClick={() => saveCharacter()}>save</button>
     </div>

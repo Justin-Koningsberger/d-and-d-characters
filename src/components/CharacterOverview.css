@@ -14,7 +14,7 @@ label {
 }
 
 .character-overview {
-    flex: 1.8;
+    flex: 1.5;
     background-color: orange;
     display: flex;
 }
