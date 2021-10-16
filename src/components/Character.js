@@ -27,25 +27,32 @@ const Character = () => {
   }, [id])
 
   const updateCharacter = (data) => {
-    const updatedCharacter = { ...character, attributes: data }
-    setCharacter(updatedCharacter)
+    const characterToUpdate = character
+    Object.assign(characterToUpdate.attributes, data)
+
+    try {
+      // console.log('updating', characterToUpdate)
+      saveCharacter(characterToUpdate)
+      setCharacter(characterToUpdate)
+    }
+    catch (e) {
+      console.error('Uh oh...', e)
+    }
   }
 
-  const saveCharacter = async () => {
+  const saveCharacter = async (characterToSave) => {
     const id = character.id
-    await axios.put(`${baseUrl}/${id}`, character)
+    await axios.put(`${baseUrl}/${id}`, characterToSave)
   }
 
   return (
-    <div style={{ height: '1080px' }}>
+    <div style={{ height: '1280px' }}>
       <CharacterOverview character={character} updateCharacter={updateCharacter} />
       <div style={ {display: 'flex', height: '80%', margin: '40px', marginTop: 0} } className="rowContainer">
         <LeftRow character={character} updateCharacter={updateCharacter} />
         <MiddleRow character={character} updateCharacter={updateCharacter} />
         <RightRow character={character} updateCharacter={updateCharacter} />
       </div>
-      <button onClick={() => console.log(character)}>values?</button>
-      <button onClick={() => saveCharacter()}>save</button>
     </div>
   )
 }

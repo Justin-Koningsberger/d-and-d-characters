@@ -30,15 +30,16 @@ const CharacterOverview = ({ character, updateCharacter }) => {
 
   return (
     <div className="container">
-      <div className="character-name">
+      <div className="characterName">
         <p style={{ paddingLeft: '10px'}}>
           {character?.name}
         </p>
-        <label htmlFor="character-name">
+        <label>
           character name
         </label>
+        <button onClick={() => console.log('character object:', character)}>values?</button>
       </div>
-      <div className="character-overview">
+      <div className="characterOverview">
         <div className="row">
           <div className="charClass">
             <input
@@ -77,9 +78,11 @@ const CharacterOverview = ({ character, updateCharacter }) => {
         <div className="row">
           <div>
             <input
+              type="number"
+              min="0"
               className="charExperience"
               value={charExperience}
-              onChange={ e => setCharExperience(parseInt(e.target.value)) }>
+              onChange={ e => setCharExperience(e.target.value) }>
             </input>
             <label>experience points</label>
           </div>

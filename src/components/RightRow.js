@@ -1,16 +1,18 @@
 import React from 'react'
+import './RightRow.css'
 
 const RightRow = () => {
-  const style = {
-    flex: 1,
-    backgroundColor: 'yellow',
-    margin: '8px 0px 8px 0px',
-    padding: '5px'
-  }
-
   return (
-    <div style={style} className="container">
-      Two rows: top row has 4 rows, bottom row is one element
+    <div className="rightRow">
+      <div id="personalStuff">
+        <div id="personalityTraits">personality traits</div>
+        <div id="ideals">ideals</div>
+        <div id="bonds">bonds</div>
+        <div id="flaws">flaws</div>
+      </div>
+      <div id="featuresTraits">
+        features & traits
+      </div>
     </div>
   )
 }

@@ -3,13 +3,13 @@ Create, save and update D&D characters online.
 ---------  
 ## Roadmap  
 =========  
-  Init empty app  
-  Implement landing page (enter character name)  
-  Save character to backend/visit character url to retrieve character sheet  
-  Deploy to heroku  
+  ~~Init empty app~~  
+  ~~Implement landing page (enter character name)~~  
+  ~~Save character to backend/visit character url to retrieve character sheet~~  
+  ~~Deploy to heroku~~  
 --------  
-  Character creation page (name filled in)  
-  Save data field for character  
+  ~~Character creation page (name filled in)~~  
+  ~~Save data field for character~~  
   Save character number/text/boolean fields  
   Create minimum viable fields  
   Layout inspired by wotc-character sheet  

@@ -1,0 +1,17 @@
+.rightRow div {
+  border: 1px solid black;
+}
+
+.rightRow {
+    flex: 1;
+    background-color: yellow;
+    margin: 8px 0px 8px 0px;
+    padding: 5px;
+    display: grid;
+    grid-template-rows: 6fr 9.5fr;
+}
+
+#personalStuff {
+    display: grid;
+    grid-template-rows: repeat(4 1fr)
+}

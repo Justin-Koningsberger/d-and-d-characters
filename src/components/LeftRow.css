@@ -1,0 +1,53 @@
+.leftRow {
+  flex: 1;
+  background-color: green;
+  padding: 5px;
+  margin: 8px 0px 8px 0px;
+  display: grid;
+  grid-template-rows: 7fr 0.5fr 2.5fr;
+}
+
+#skills {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+
+}
+
+#abilityScores {
+  border: 2px solid black;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+}
+
+#subSkills {
+  display: grid;
+  grid-template-rows: 1fr 1fr 4fr 10fr;
+}
+
+.inspiration {
+  border: 2px solid black;
+}
+
+.proficiencyBonus {
+  border: 2px solid black;
+}
+
+.savingThrows {
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.skills {
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+#rowTwo {
+  border: 2px solid black;
+}
+
+#langAndProf {
+  border: 2px solid black;
+}
