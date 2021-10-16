@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import CharacterOverview from './CharacterOverview'
-import LeftRow from './LeftRow'
+import LeftRow from './leftRow/LeftRow'
 import MiddleRow from './MiddleRow'
 import RightRow from './RightRow'
 
@@ -28,6 +28,10 @@ const Character = () => {
 
   const updateCharacter = (data) => {
     const characterToUpdate = character
+
+    if (!characterToUpdate.attributes) {
+      characterToUpdate.attributes = {}
+    }
     Object.assign(characterToUpdate.attributes, data)
 
     try {
@@ -48,7 +52,13 @@ const Character = () => {
   return (
     <div style={{ height: '1280px' }}>
       <CharacterOverview character={character} updateCharacter={updateCharacter} />
-      <div style={ {display: 'flex', height: '80%', margin: '40px', marginTop: 0} } className="rowContainer">
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, 1fr)',
+        height: '100%',
+        margin: '40px',
+        marginTop: 0
+      }} className="rowContainer">
         <LeftRow character={character} updateCharacter={updateCharacter} />
         <MiddleRow character={character} updateCharacter={updateCharacter} />
         <RightRow character={character} updateCharacter={updateCharacter} />

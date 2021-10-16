@@ -6,24 +6,23 @@ const CharacterOverview = ({ character, updateCharacter }) => {
   const [charRace, setCharRace] = useState('')
   const [charAlign, setCharAlign] = useState('')
   const [charBackground, setCharBackground] = useState('')
-  // experience points are the first thing I want to treat as a number
   const [charExperience, setCharExperience] = useState('')
 
   useEffect(() => {
     if (typeof character.attributes !== 'undefined') {
       const attrs = character.attributes
 
-      setCharClass(attrs.charClass)
-      setCharRace(attrs.charRace)
-      setCharAlign(attrs.charAlign)
+      setCharClass(attrs.charClass || '')
+      setCharRace(attrs.charRace || '')
+      setCharAlign(attrs.charAlign || '')
       setCharBackground(attrs.charBackground || '')
-      setCharExperience(attrs.charExperience || 0)
+      setCharExperience(attrs.charExperience || '')
 
     }
   }, [character.attributes])
 
   const updateChar = () => {
-    const data = { charClass, charRace, charAlign, charBackground, charExperience: parseInt(charExperience) || 0 }
+    const data = { charClass, charRace, charAlign, charBackground, charExperience }
 
     updateCharacter(data)
   }
