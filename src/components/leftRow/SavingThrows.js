@@ -1,7 +1,7 @@
 import React from 'react'
 import './SavingThrows.css'
 
-const SavingThrows = ({ character, updateCharacter }) => {
+const SavingThrows = () => {
   // I think all these values need to be calculated from character attributes
   // Also these will be sub components, shared with Skills
   return (

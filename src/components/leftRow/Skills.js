@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Skills = ({ character, updateCharacter }) => {
+const Skills = () => {
   return (
     <div className="skills">
       More coming!!

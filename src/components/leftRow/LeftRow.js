@@ -4,17 +4,16 @@ import SavingThrows from './SavingThrows'
 import Skills from './Skills'
 import './LeftRow.css'
 
-const LeftRow = ({ character, updateCharacter }) => {
-
+const LeftRow = () => {
   return (
     <div className="leftRow">
       <div id="skills">
-        <AbilityScores character={character} updateCharacter={updateCharacter} />
+        <AbilityScores />
         <div id="subSkills">
           <div className="inspiration">inspiration</div>
           <div className="proficiencyBonus">proficiency bonus</div>
-          <SavingThrows character={character} updateCharacter={updateCharacter} />
-          <Skills character={character} updateCharacter={updateCharacter} />
+          <SavingThrows />
+          <Skills />
         </div>
       </div>
       <div id="passiveSkills">passive skills I think</div>

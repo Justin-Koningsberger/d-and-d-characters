@@ -1,57 +1,47 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { connect, useSelector } from 'react-redux'
+import { updateCharacter } from '../characterReducer'
+import { saveCharacter } from '../characterService'
 import './CharacterOverview.css'
 
-const CharacterOverview = ({ character, updateCharacter }) => {
-  const [charClass, setCharClass] = useState('')
-  const [charRace, setCharRace] = useState('')
-  const [charAlign, setCharAlign] = useState('')
-  const [charBackground, setCharBackground] = useState('')
-  const [charExperience, setCharExperience] = useState('')
+const CharacterOverview = (props) => {
+  const character = useSelector((state) => state)
 
-  useEffect(() => {
-    if (typeof character.attributes !== 'undefined') {
-      const attrs = character.attributes
+  const updateCharacter = (event) => {
+    const data = { key: event.target.className, value: event.target.value }
+    props.updateCharacter(data)
+  }
 
-      setCharClass(attrs.charClass || '')
-      setCharRace(attrs.charRace || '')
-      setCharAlign(attrs.charAlign || '')
-      setCharBackground(attrs.charBackground || '')
-      setCharExperience(attrs.charExperience || '')
-
-    }
-  }, [character.attributes])
-
-  const updateChar = () => {
-    const data = { charClass, charRace, charAlign, charBackground, charExperience }
-
-    updateCharacter(data)
+  if (!character.attributes) {
+    return null
   }
 
   return (
     <div className="container">
       <div className="characterName">
         <p style={{ paddingLeft: '10px'}}>
-          {character?.name}
+          {character.name}
         </p>
         <label>
           character name
         </label>
-        <button onClick={() => console.log('character object:', character)}>values?</button>
+        <button onClick={() => saveCharacter(character)}>save</button>
       </div>
       <div className="characterOverview">
         <div className="row">
-          <div className="charClass">
+          <div>
             <input
-              value={charClass}
-              onChange={ e => setCharClass(e.target.value) }>
+              className="charClass"
+              value={character.attributes.charClass}
+              onChange={e => updateCharacter(e)}>
             </input>
             <label>class and level</label>
           </div>
           <div>
             <input
               className="charRace"
-              value={charRace}
-              onChange={ e => setCharRace(e.target.value) }>
+              value={character.attributes.charRace}
+              onChange={e => updateCharacter(e)}>
             </input>
             <label htmlFor="charRace">race</label>
           </div>
@@ -60,16 +50,16 @@ const CharacterOverview = ({ character, updateCharacter }) => {
           <div>
             <input
               className="charAlign"
-              value={charAlign}
-              onChange={ e => setCharAlign(e.target.value) }>
+              value={character.attributes.charAlign}
+              onChange={e => updateCharacter(e)}>
             </input>
             <label>alignment</label>
           </div>
           <div>
             <input
               className="charBackground"
-              value={charBackground}
-              onChange={ e => setCharBackground(e.target.value) }>
+              value={character.attributes.charBackground}
+              onChange={e => updateCharacter(e)}>
             </input>
             <label>background</label>
           </div>
@@ -80,16 +70,17 @@ const CharacterOverview = ({ character, updateCharacter }) => {
               type="number"
               min="0"
               className="charExperience"
-              value={charExperience}
-              onChange={ e => setCharExperience(e.target.value) }>
+              value={character.attributes.charExperience}
+              onChange={e => updateCharacter(e)}>
             </input>
             <label>experience points</label>
           </div>
         </div>
       </div>
-      <button onClick={updateChar}>update</button>
     </div>
   )
 }
 
-export default CharacterOverview
+const ConnectedCharacterOverview = connect(null, { updateCharacter })(CharacterOverview)
+
+export default ConnectedCharacterOverview

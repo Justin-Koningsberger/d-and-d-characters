@@ -1,40 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { connect, useSelector } from 'react-redux'
+import { updateCharacter } from '../../characterReducer'
 import './AbilityScores.css'
 
-const AbilityScores = ({ character, updateCharacter }) => {
-  const [strength, setStrength] = useState('')
-  const [dexterity, setDexterity] = useState('')
-  const [constitution, setConstitution] = useState('')
-  const [intelligence, setIntelligence] = useState('')
-  const [wisdom, setWisdom] = useState('')
-  const [charisma, setCharisma] = useState('')
+const AbilityScores = (props) => {
+  const character = useSelector((state) => state)
 
-  useEffect(() => {
-    if (typeof character.attributes !== 'undefined') {
-      const attrs = character.attributes
-
-      setStrength(attrs.strength || '')
-      setDexterity(attrs.dexterity || '')
-      setConstitution(attrs.constitution || '')
-      setIntelligence(attrs.intelligence || '')
-      setWisdom(attrs.wisdom || '')
-      setCharisma(attrs.charisma || '')
-
-    }
-  }, [character.attributes])
-
-  const updateChar = () => {
-    const data = {
-      strength,
-      dexterity,
-      constitution,
-      intelligence,
-      wisdom,
-      charisma
-    }
-
-    updateCharacter(data)
+  const updateCharacter = (event) => {
+    const data = { key: event.target.id, value: event.target.value }
+    props.updateCharacter(data)
   }
+
+  if (!character.attributes) {
+    return null
+  }
+
   return (
     <div id="abilityScores">
       {/* TODO - For sure make components out of these elements
@@ -42,54 +22,55 @@ const AbilityScores = ({ character, updateCharacter }) => {
       <div>
         <input
           type="number"
-          value={strength}
-          onChange={ e => setStrength(e.target.value) }
+          value={character.attributes.strength}
+          onChange={e => updateCharacter(e)}
           id="strength"></input>
         <label>strength</label>
       </div>
       <div>
         <input
           type="number"
-          value={dexterity}
-          onChange={ e => setDexterity(e.target.value) }
+          value={character.attributes.dexterity}
+          onChange={e => updateCharacter(e)}
           id="dexterity"></input>
         <label>dexterity</label>
       </div>
       <div>
         <input
           type="number"
-          value={constitution}
-          onChange={ e => setConstitution(e.target.value) }
+          value={character.attributes.constitution}
+          onChange={e => updateCharacter(e)}
           id="constitution"></input>
         <label>constitution</label>
       </div>
       <div>
         <input
           type="number"
-          value={intelligence}
-          onChange={ e => setIntelligence(e.target.value) }
+          value={character.attributes.intelligence}
+          onChange={e => updateCharacter(e)}
           id="intelligence"></input>
         <label>intelligence</label>
       </div>
       <div>
         <input
           type="number"
-          value={wisdom}
-          onChange={ e => setWisdom(e.target.value) }
+          value={character.attributes.wisdom}
+          onChange={e => updateCharacter(e)}
           id="wisdom"></input>
         <label>wisdom</label>
       </div>
       <div>
         <input
           type="number"
-          value={charisma}
-          onChange={ e => setCharisma(e.target.value) }
+          value={character.attributes.charisma}
+          onChange={e => updateCharacter(e)}
           id="charisma"></input>
         <label>charisma</label>
       </div>
-    <button onClick={updateChar}>update</button>
     </div>
   )
 }
 
-export default AbilityScores
+const ConnectedAbilityScores = connect(null, { updateCharacter })(AbilityScores)
+
+export default ConnectedAbilityScores
