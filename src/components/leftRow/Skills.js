@@ -1,23 +1,28 @@
 import React from 'react'
+import Skill from './Skill'
 
 const Skills = () => {
   return (
     <div className="skills">
-      More coming!!
-      {/* These will be sub components, shared with SavingThrows */}
-      <div id="acrobatics">
-        <input></input>
-        <label>Acrobatics</label>
-      </div>
-      <div id="animalHandling">
-        <input></input>
-        <label>Animal handling</label>
-      </div>
-      <div id="arcana">
-        <input></input>
-        <label>Arcana</label>
-      </div>
-      skills (no state yet)
+      <Skill name="acrobatics" />
+      <Skill name="animalHandling" />
+      <Skill name="arcana" />
+      <Skill name="athletics" />
+      <Skill name="deception" />
+      <Skill name="history" />
+      <Skill name="insight" />
+      <Skill name="intimidation" />
+      <Skill name="investigation" />
+      <Skill name="medicine" />
+      <Skill name="nature" />
+      <Skill name="perception" />
+      <Skill name="performance" />
+      <Skill name="persuasion" />
+      <Skill name="religion" />
+      <Skill name="sleightOfHand" />
+      <Skill name="stealth" />
+      <Skill name="survival" />
+      <p>skills</p>
     </div>
   )
 }

@@ -1,6 +1,4 @@
 import React from 'react'
-import { connect, useSelector } from 'react-redux'
-import { updateCharacter } from '../../characterReducer'
 import AbilityScore from './AbilityScore'
 import './AbilityScores.css'
 
