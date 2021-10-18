@@ -30,7 +30,7 @@ const SavingThrows = () => {
         <input></input>
         Charisma
       </div>
-      savingThrows
+      savingThrows (no state yet)
     </div>
   )
 }

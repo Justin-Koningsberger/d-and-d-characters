@@ -17,7 +17,7 @@ const Skills = () => {
         <input></input>
         <label>Arcana</label>
       </div>
-      skills
+      skills (no state yet)
     </div>
   )
 }

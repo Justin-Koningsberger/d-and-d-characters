@@ -10,7 +10,7 @@ export const getCharacter = async (id) => {
   }
   catch (e) {
     // If status is 400, character id is most likely wrong
-    console.log('error retrieving character', e)
+    console.log('Character not found:', e.message)
   }
 }
 
