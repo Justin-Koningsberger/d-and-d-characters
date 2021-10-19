@@ -1,4 +1,4 @@
-import react, {useState} from 'react'
+import {useState} from 'react'
 import { connect, useSelector } from 'react-redux'
 import { updateCharacter } from '../../characterReducer'
 
@@ -12,8 +12,7 @@ const Skill = (props) => {
   const updateCharacter = (event) => {
     const data = {
       key: skillName,
-      value: event.target.value,
-      checked: checked
+      value: event.target.value
     }
     props.updateCharacter(data)
   }
@@ -38,7 +37,7 @@ const Skill = (props) => {
         value={skillScore}
         onChange={e => updateCharacter(e)}>
       </input>
-      <label>{skillName.slice(0, -2)}</label>
+      <label>{skillName}</label>
     </div>
   )
 }

@@ -4,7 +4,7 @@ import './RightRow.css'
 const RightRow = () => {
   return (
     <div className="rightRow">
-      <div id="personalStuff">
+      <div style={{ padding: "10px" }} id="personalStuff">
         <div id="personalityTraits">personality traits</div>
         <div id="ideals">ideals</div>
         <div id="bonds">bonds</div>

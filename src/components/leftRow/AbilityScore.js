@@ -1,4 +1,4 @@
-import react from 'react'
+
 import { connect, useSelector } from 'react-redux'
 import { updateCharacter } from '../../characterReducer'
 
@@ -18,16 +18,24 @@ const AbilityScore = (props) => {
   const abilityScore = character.attributes[abilityName]
   //check this calc, not sure what the rules are here
   const modifier = Math.floor((abilityScore-10)/2)
+  let displayValue
+  if (isNaN(modifier)) {
+    displayValue = ''
+  }
+  else {
+    displayValue = Math.sign(modifier) < 0 ? modifier : `+${modifier}`
+  }
 
   return (
     <div className="abilityBadge">
       <p className="name">{abilityName}</p>
       <div className="modifier">
-        {Math.sign(modifier) < 0 ? modifier : `+${modifier}`}
+        {displayValue}
       </div>
       <div className="score">
         <input
           type="number"
+          min="0"
           value={abilityScore}
           onChange={e => updateCharacter(e)}>
         </input>

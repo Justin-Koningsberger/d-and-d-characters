@@ -2,6 +2,7 @@ import React from 'react'
 import AbilityScoreList from './AbilityScoreList'
 import SavingThrows from './SavingThrows'
 import Skills from './Skills'
+import LangAndProf from './LangAndProf'
 import './LeftRow.css'
 
 const LeftRow = () => {
@@ -17,7 +18,7 @@ const LeftRow = () => {
         </div>
       </div>
       <div id="passiveSkills">passive skills I think</div>
-      <div id="langAndProf">languages & proficiencies</div>
+      <LangAndProf />
     </div>
   )
 }

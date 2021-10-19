@@ -6,15 +6,14 @@ label {
     display: flex;
     margin-right: 40px;
     margin-left: 40px;
+    border: 1px solid black;
 }
 
 .characterName {
     flex: 1;
-    background-color: red;
 }
 
 .characterOverview {
     flex: 1.5;
-    background-color: orange;
     display: flex;
 }
