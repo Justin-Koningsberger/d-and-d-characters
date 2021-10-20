@@ -5,21 +5,17 @@ import './MiddleRow.css'
 const MiddleRow = () => {
   return (
     <div className="middleRow">
-      <div id="hackyStuff">
-        <div id="combatInformation1">
-          <div id="div1">armor class</div>
-          <div id="div2">initiative</div>
-          <div id="div3">speed</div>
-          <div id="div4">current hit points</div>
-          <div id="div5">temporary hit points</div>
-        </div>
-        <div id="combatInformation2">
-          <div id="hitDice">hit dice</div>
-          <div id="deathSaves">death saves</div>
-        </div>
+      <div id="combatInformation">
+        <div id="armorClass"><p>armor class</p></div>
+        <div id="initiative"><p>initiative</p></div>
+        <div id="speed"><p>speed</p></div>
+        <div id="currentHitPoints"><p>current hit points</p></div>
+        <div id="temporaryHitPoints"><p>temporary hit points</p></div>
+        <div id="hitDice"><p>hit dice</p></div>
+        <div id="deathSaves"><p>death saves</p></div>
       </div>
       <div id="attacksAndSpells">
-        attacks & spellcasting
+        <p>attacks & spellcasting</p>
       </div>
       <Equipment />
     </div>

@@ -32,7 +32,7 @@ const LangAndProf = (props) => {
           value={character.attributes.languages}
           onChange={e => updateCharacter(e)} />
       </div>
-      <label>other proficiencies & languages</label>
+      <p>other proficiencies & languages</p>
     </div>
   )
 }

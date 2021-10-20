@@ -9,19 +9,15 @@
     width: 75%;
     margin: 10%;
     border: 1px solid black;
+    border-radius: 15px;
     background-color: #FFF;
     position:relative;
-}
-
-.abilityBadge .name {
-    text-align: center;
-    margin-top: 0;
-    padding-top: 5px;
 }
 
 .modifier {
     text-align: center;
     font-size: 30px;
+    margin-top: 10px;
 }
 
 .score {
@@ -34,7 +30,11 @@
     border-radius: 50%;
 }
 
-.score input {
+.score > input {
     width: 35px;
     height: 20px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    border: none;
 }

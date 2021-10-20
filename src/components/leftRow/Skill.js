@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import { connect, useSelector } from 'react-redux'
 import { updateCharacter } from '../../characterReducer'
+import './LeftRow.css'
 
 const Skill = (props) => {
   const character = useSelector((state) => state)
@@ -32,7 +33,7 @@ const Skill = (props) => {
         onClick={e => setChecked(!checked)}>
       </input>
       <input
-        style={{ width: "40px" }}
+        className="skillInput"
         type="number"
         value={skillScore}
         onChange={e => updateCharacter(e)}>

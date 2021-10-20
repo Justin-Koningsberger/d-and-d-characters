@@ -17,7 +17,7 @@ const LeftRow = () => {
           <Skills />
         </div>
       </div>
-      <div id="passiveSkills">passive skills I think</div>
+      <div id="passiveSkills"><p>passive skills I think</p></div>
       <LangAndProf />
     </div>
   )

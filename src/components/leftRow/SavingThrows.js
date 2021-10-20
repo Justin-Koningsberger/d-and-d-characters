@@ -11,7 +11,7 @@ const SavingThrows = () => {
       <Skill name="intelligenceST" />
       <Skill name="wisdomST" />
       <Skill name="charismaST" />
-      <p>savingThrows</p>
+      <p>saving throws</p>
     </div>
   )
 }
