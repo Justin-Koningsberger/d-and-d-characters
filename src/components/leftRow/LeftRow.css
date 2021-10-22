@@ -5,7 +5,6 @@ div > p {
 
 .leftRow {
     flex: 1;
-    padding: 5px;
     margin: 8px 0px 8px 0px;
     display: grid;
     grid-template-rows: 7fr 0.5fr 2.5fr;

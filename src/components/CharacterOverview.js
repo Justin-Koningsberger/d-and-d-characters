@@ -19,7 +19,7 @@ const CharacterOverview = (props) => {
   return (
     <div className="container">
       <div className="characterName">
-        <p style={{ paddingLeft: '10px'}}>
+        <p>
           {character.name}
         </p>
         <label>
@@ -28,53 +28,47 @@ const CharacterOverview = (props) => {
         <button onClick={() => saveCharacter(character)}>save</button>
       </div>
       <div className="characterOverview">
-        <div className="row">
-          <div>
-            <input
-              className="charClass"
-              value={character.attributes.charClass}
-              onChange={e => updateCharacter(e)}>
-            </input>
-            <label>class and level</label>
-          </div>
-          <div>
-            <input
-              className="charRace"
-              value={character.attributes.charRace}
-              onChange={e => updateCharacter(e)}>
-            </input>
-            <label htmlFor="charRace">race</label>
-          </div>
+        <div className="class twoRows">
+          <input
+            className="charClass"
+            value={character.attributes.charClass}
+            onChange={e => updateCharacter(e)}>
+          </input>
+          <label>class and level</label>
         </div>
-        <div className="row">
-          <div>
-            <input
-              className="charAlign"
-              value={character.attributes.charAlign}
-              onChange={e => updateCharacter(e)}>
-            </input>
-            <label>alignment</label>
-          </div>
-          <div>
-            <input
-              className="charBackground"
-              value={character.attributes.charBackground}
-              onChange={e => updateCharacter(e)}>
-            </input>
-            <label>background</label>
-          </div>
+        <div className="race twoRows">
+          <input
+            className="charRace"
+            value={character.attributes.charRace}
+            onChange={e => updateCharacter(e)}>
+          </input>
+          <label>race</label>
         </div>
-        <div className="row">
-          <div>
-            <input
-              type="number"
-              min="0"
-              className="charExperience"
-              value={character.attributes.charExperience}
-              onChange={e => updateCharacter(e)}>
-            </input>
-            <label>experience points</label>
-          </div>
+        <div className="alignment twoRows">
+          <input
+            className="charAlign"
+            value={character.attributes.charAlign}
+            onChange={e => updateCharacter(e)}>
+          </input>
+          <label>alignment</label>
+        </div>
+        <div className="background twoRows">
+          <input
+            className="charBackground"
+            value={character.attributes.charBackground}
+            onChange={e => updateCharacter(e)}>
+          </input>
+          <label>background</label>
+        </div>
+        <div className="experience twoRows">
+          <input
+            className="charExperience"
+            type="number"
+            min="0"
+            value={character.attributes.charExperience}
+            onChange={e => updateCharacter(e)}>
+          </input>
+          <label>experience points</label>
         </div>
       </div>
     </div>

@@ -23,6 +23,7 @@ const Character = () => {
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
+        gridColumnGap: '10px',
         height: '100%',
         margin: '40px',
         marginTop: 0

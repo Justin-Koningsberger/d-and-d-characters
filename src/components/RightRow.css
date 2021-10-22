@@ -1,7 +1,6 @@
 .rightRow {
     flex: 1;
     margin: 8px 0px 8px 0px;
-    padding: 5px;
     display: grid;
     grid-template-rows: 6fr 9.5fr;
     grid-row-gap: 15px;
