@@ -1,19 +1,25 @@
-import {useState} from 'react'
 import { connect, useSelector } from 'react-redux'
 import { updateCharacter } from '../../characterReducer'
 import './LeftRow.css'
 
 const Skill = (props) => {
   const character = useSelector((state) => state)
-  const [checked, setChecked] = useState('false')
   const skillName = props.name
+  const skillChecked = skillName.concat('Checked')
 
-  // TODO think of a better way of saving skill data
-  // maybe change schema in backend as well
   const updateCharacter = (event) => {
-    const data = {
-      key: skillName,
-      value: event.target.value
+    let data
+    if (event.target.id === skillName) {
+      data = {
+        key: skillName,
+        value: event.target.value
+      }
+    }
+    else {
+      data = {
+        key: skillChecked,
+        value: event.target.checked.toString()
+      }
     }
     props.updateCharacter(data)
   }
@@ -23,17 +29,26 @@ const Skill = (props) => {
   }
 
   const skillScore = character.attributes[skillName]
+  // Backend returns skillChecked as string, eval should be safe here
+  // value can only be 'true' or 'false'
+  const inputChecked = character.attributes[skillChecked] === undefined
+    ? false
+    /* eslint-disable no-eval */
+    : eval(character.attributes[skillChecked])
 
   return (
     <div id={skillName}>
       <input
         className="roundCheckbox"
+        id={skillChecked}
         type="checkbox"
-        value={checked}
-        onClick={e => setChecked(!checked)}>
+        defaultChecked={inputChecked}
+        onClick={e => updateCharacter(e)}>
       </input>
+      {/* If I use the signedNumber utility, I can't use type=number */}
       <input
         className="skillInput"
+        id={skillName}
         type="number"
         value={skillScore}
         onChange={e => updateCharacter(e)}>

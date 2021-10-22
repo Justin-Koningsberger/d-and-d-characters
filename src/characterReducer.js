@@ -28,13 +28,8 @@ const reducer = (state = {}, action) => {
     case 'UPDATE_CHARACTER':
       const key = action.payload.key
       const value = action.payload.value
-      const updatedAttributes = Object.defineProperty(state.attributes, key, {
-        value: value,
-        writable: true,
-        enumerable: true,
-        configurable: true
-      })
-      const newState = { ...state, attributes: updatedAttributes }
+      const newState = {...state}
+      newState.attributes[key] = value
 
       return newState
     default:
