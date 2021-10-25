@@ -1,5 +1,6 @@
 import React from 'react'
 import Equipment from './Equipment'
+import HitPoint from './HitPoint'
 import './MiddleRow.css'
 
 const MiddleRow = () => {
@@ -9,8 +10,8 @@ const MiddleRow = () => {
         <div id="armorClass"><p>armor class</p></div>
         <div id="initiative"><p>initiative</p></div>
         <div id="speed"><p>speed</p></div>
-        <div id="currentHitPoints"><p>current hit points</p></div>
-        <div id="temporaryHitPoints"><p>temporary hit points</p></div>
+        <HitPoint label="currentHitPoints" />
+        <HitPoint label="temporaryHitPoints" />
         <div id="hitDice"><p>hit dice</p></div>
         <div id="deathSaves"><p>death saves</p></div>
       </div>

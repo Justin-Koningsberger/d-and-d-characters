@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import CharacterOverview from './CharacterOverview'
 import LeftRow from './leftRow/LeftRow'
 import MiddleRow from './middleRow/MiddleRow'
-import RightRow from './RightRow'
+import RightRow from './rightRow/RightRow'
 
 import { findCharacter } from '../characterReducer'
 

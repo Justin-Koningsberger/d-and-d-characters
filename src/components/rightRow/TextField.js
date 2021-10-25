@@ -1,15 +1,16 @@
 import { connect, useSelector } from 'react-redux'
 import { updateCharacter } from '../../characterReducer'
 
-const Currency = (props) => {
+const TextField = (props) => {
   const character = useSelector((state) => state)
-  const name = props.name
+  const label = props.label
 
   const updateCharacter = (event) => {
     const data = {
-      key: name,
+      key: event.target.className,
       value: event.target.value
     }
+    console.log(data)
     props.updateCharacter(data)
   }
 
@@ -18,19 +19,17 @@ const Currency = (props) => {
   }
 
   return (
-    <div className="currencyBadge">
-      <label>{name}</label>
-      <input
-        id={name}
-        type="number"
-        min="0"
-        value={character.attributes[name]}
+    <div className="hitpoint">
+      <textarea
+        className={label}
+        value={character.attributes[label]}
         onChange={e => updateCharacter(e)}
       />
+      <label>{label}</label>
     </div>
    )
 }
 
-const ConnectedCurrency = connect(null, { updateCharacter })(Currency)
+const ConnectedTextField = connect(null, { updateCharacter })(TextField)
 
-export default ConnectedCurrency
+export default ConnectedTextField
