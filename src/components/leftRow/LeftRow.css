@@ -39,15 +39,49 @@ div > p {
     padding-top: 10px;
 }
 
-#passiveSkills {
-    border: 1px solid black;
-    border-radius: 15px;
-}
-
 .skillInput{
     width: 40px;
     border: 1px solid black;
     border-style: none none solid none;
+}
+
+#passiveSkills {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.passiveSkillLevel {
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: grid;
+}
+
+.passiveSkillLevel > input {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    border: none;
+    align-self: center;
+    justify-self: center;
+    width: 45px;
+}
+
+.passiveSkill {
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    align-self: start;
+}
+
+.passiveSkill > textArea {
+    width: 80%;
+    margin: 0% 10%;
+    justify-self: center;
 }
 
 #langAndProf {

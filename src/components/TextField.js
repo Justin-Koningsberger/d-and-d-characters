@@ -1,16 +1,16 @@
 import { connect, useSelector } from 'react-redux'
-import { updateCharacter } from '../../characterReducer'
+import { updateCharacter } from '../characterReducer'
 
 const TextField = (props) => {
   const character = useSelector((state) => state)
   const label = props.label
+  const name = props.name
 
   const updateCharacter = (event) => {
     const data = {
-      key: event.target.className,
+      key: name,
       value: event.target.value
     }
-    console.log(data)
     props.updateCharacter(data)
   }
 
@@ -19,10 +19,9 @@ const TextField = (props) => {
   }
 
   return (
-    <div className="hitpoint">
+    <div className={name}>
       <textarea
-        className={label}
-        value={character.attributes[label]}
+        value={character.attributes[name] || ''}
         onChange={e => updateCharacter(e)}
       />
       <label>{label}</label>

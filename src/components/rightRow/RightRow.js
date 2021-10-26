@@ -1,18 +1,18 @@
 import React from 'react'
-import TextField from './TextField'
+import TextField from '../TextField'
 import './RightRow.css'
 
 const RightRow = () => {
   return (
     <div className="rightRow">
       <div className="personalStuff">
-        <TextField label="personalityTraits" />
-        <TextField label="ideals" />
-        <TextField label="bonds" />
-        <TextField label="flaws" />
+        <TextField name="personalityTraits" label="personality traits" />
+        <TextField name="ideals" label="ideals" />
+        <TextField name="bonds" label="bonds" />
+        <TextField name="flaws" label="flaws" />
       </div>
       <div className="featuresTraits">
-        <p>features & traits</p>
+        <TextField name="featsTraits" label="features & traits" />
       </div>
     </div>
   )

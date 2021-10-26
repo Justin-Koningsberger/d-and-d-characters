@@ -14,23 +14,32 @@
     padding: 10px;
 }
 
-.hitpoint {
+.personalStuff > div {
     background-color: #FFF;
     display: grid;
     grid-template-rows: 3fr 1fr;
+    padding: 10px;
 }
 
-.hitpoint > textArea {
-    padding: 10px;
+label {
+    justify-self: center;
+}
+
+textArea {
     box-sizing: border-box;
     border: none;
     resize: none;
 }
 
-.hitpoint > label {
-    justify-self: center;
-}
-
 .featuresTraits {
     border: 1px solid black;
+    display: grid;
+    border-radius: 15px;
+}
+
+.featsTraits > textArea {
+    width: 100%;
+    height: 80%;
+    margin: 5px;
+    padding: 10px;
 }
