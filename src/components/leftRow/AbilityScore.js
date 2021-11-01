@@ -11,10 +11,6 @@ const AbilityScore = (props) => {
     props.updateCharacter(data)
   }
 
-  if (!character.attributes) {
-    return null
-  }
-
   const abilityScore = character.attributes[abilityName]
   const modifier = Math.floor((abilityScore-10)/2)
 
@@ -28,7 +24,7 @@ const AbilityScore = (props) => {
         <input
           type="number"
           min="0"
-          value={abilityScore}
+          value={abilityScore || ''}
           onChange={e => updateCharacter(e)}>
         </input>
       </div>

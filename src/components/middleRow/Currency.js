@@ -13,10 +13,6 @@ const Currency = (props) => {
     props.updateCharacter(data)
   }
 
-  if (!character.attributes) {
-    return null
-  }
-
   return (
     <div className="currencyBadge">
       <label>{name}</label>
@@ -24,7 +20,7 @@ const Currency = (props) => {
         id={name}
         type="number"
         min="0"
-        value={character.attributes[name]}
+        value={character.attributes[name] || ''}
         onChange={e => updateCharacter(e)}
       />
     </div>

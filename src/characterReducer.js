@@ -19,9 +19,16 @@ export const updateCharacter = (data) => {
   }
 }
 
+export const updateWeapon = (data) => {
+  return async dispatch => {
+    dispatch({
+      type: 'UPDATE_WEAPON',
+      payload: data
+    })
+  }
+}
+
 const reducer = (state = {}, action) => {
-  // console.log('reducer-state now: ', state)
-  // console.log('reducer-action', action)
   switch (action.type) {
     case 'GET_CHARACTER':
       return action.payload
@@ -32,6 +39,11 @@ const reducer = (state = {}, action) => {
       newState.attributes[key] = value
 
       return newState
+    case 'UPDATE_WEAPON':
+      const newWeaponState = {...state}
+      newWeaponState.weapons[action.payload.index][action.payload.key] = action.payload.value
+
+      return newWeaponState
     default:
       return state
   }

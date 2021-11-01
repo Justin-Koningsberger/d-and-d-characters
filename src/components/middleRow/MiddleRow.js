@@ -1,6 +1,9 @@
 import React from 'react'
 import Equipment from './Equipment'
+import DeathSaves from './DeathSaves'
 import NumberField from '../NumberField'
+import TextField from '../TextField'
+import Weapon from './Weapon'
 import './MiddleRow.css'
 
 const MiddleRow = () => {
@@ -12,11 +15,13 @@ const MiddleRow = () => {
         <NumberField label="speed" name="speed" />
         <NumberField label="current hit points" name="currentHitPoints" />
         <NumberField label="temporary hit points" name="temporaryHitPoints" />
-        <div id="hitDice"><p>hit dice</p></div>
-        <div id="deathSaves"><p>death saves</p></div>
+        <TextField label="hit dice" name="hitDice" />
+        <DeathSaves />
       </div>
-      <div id="attacksAndSpells">
-        <p>attacks & spellcasting</p>
+      <div className="attacksAndSpells">
+        <Weapon index={0} />
+        <Weapon index={1} />
+        <Weapon index={2} />
       </div>
       <Equipment />
     </div>

@@ -12,10 +12,6 @@ const Belongings = (props) => {
     props.updateCharacter(data)
   }
 
-  if (!character.attributes) {
-    return null
-  }
-
   return (
     <div>
       <textarea

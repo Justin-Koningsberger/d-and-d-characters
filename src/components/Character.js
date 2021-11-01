@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import CharacterOverview from './CharacterOverview'
 import LeftRow from './leftRow/LeftRow'
@@ -12,19 +12,24 @@ import { findCharacter } from '../characterReducer'
 const Character = () => {
   const { id } = useParams()
   const dispatch = useDispatch()
+  const character = useSelector(state => state)
 
   useEffect(() => {
     dispatch(findCharacter(id))
   }, [dispatch, id])
 
+  if (!character.attributes) {
+    return <h3>Character not found</h3>
+  }
+
   return (
-    <div style={{ height: '1280px' }}>
+    <div >
       <CharacterOverview />
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
         gridColumnGap: '10px',
-        height: '100%',
+
         margin: '40px',
         marginTop: 0
       }} className="rowContainer">

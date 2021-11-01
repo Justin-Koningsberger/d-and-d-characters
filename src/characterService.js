@@ -9,8 +9,7 @@ export const getCharacter = async (id) => {
     return response.data
   }
   catch (e) {
-    // If status is 400, character id is most likely wrong
-    console.log('Character not found:', e.message)
+    console.log('Character not found:', e.response.data.error)
   }
 }
 

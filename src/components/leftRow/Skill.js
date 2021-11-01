@@ -24,10 +24,6 @@ const Skill = (props) => {
     props.updateCharacter(data)
   }
 
-  if (!character.attributes) {
-    return null
-  }
-
   const skillScore = character.attributes[skillName]
   // Backend returns skillChecked as string, eval should be safe here
   // value can only be 'true' or 'false'
@@ -45,12 +41,12 @@ const Skill = (props) => {
         defaultChecked={inputChecked}
         onClick={e => updateCharacter(e)}>
       </input>
-      {/* If I use the signedNumber utility, I can't use type=number */}
+      {/* If I use my signedNumber utility, I can't use type=number */}
       <input
         className="skillInput"
         id={skillName}
         type="number"
-        value={skillScore}
+        value={skillScore || ''}
         onChange={e => updateCharacter(e)}>
       </input>
       <label>{skillName}</label>
