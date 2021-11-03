@@ -18,6 +18,12 @@ const Character = () => {
     dispatch(findCharacter(id))
   }, [dispatch, id])
 
+  useEffect(() => {
+    if (navigator.userAgentData.mobile) {
+      alert('This site is best viewed on a desktop')
+    }
+  }, [])
+
   if (!character.attributes) {
     return <h3>Character not found</h3>
   }
@@ -26,9 +32,8 @@ const Character = () => {
     <div >
       <CharacterOverview />
       <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        gridColumnGap: '10px',
+        display: 'flex',
+        flexWrap: 'wrap',
 
         margin: '40px',
         marginTop: 0

@@ -15,8 +15,8 @@ Visit <https://powerful-tundra-04982.herokuapp.com/> to try it out
 - [x]  Create minimum viable fields
 - [x]  Layout inspired by wotc-character sheet
 - [x]  Store weapons objects
-- [ ]  Quick modify (+|-) most used fields
-- [ ]  Find a nice font
+- [x]  Quick modify (+|-) most used fields
+- [x]  Find a nice font
 
 --------
 - [ ]  **opt** Automatically save fields when they lose focus

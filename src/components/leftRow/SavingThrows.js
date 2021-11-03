@@ -5,12 +5,12 @@ import './SavingThrows.css'
 const SavingThrows = () => {
   return (
     <div className="savingThrows">
-      <Skill name="strengthST" />
-      <Skill name="dexterityST" />
-      <Skill name="constitutionST" />
-      <Skill name="intelligenceST" />
-      <Skill name="wisdomST" />
-      <Skill name="charismaST" />
+      <Skill name="strengthST" label="strength" />
+      <Skill name="dexterityST" label="dexterity" />
+      <Skill name="constitutionST" label="constitution" />
+      <Skill name="intelligenceST" label="intelligence" />
+      <Skill name="wisdomST" label="wisdom" />
+      <Skill name="charismaST" label="charisma" />
       <p>saving throws</p>
     </div>
   )

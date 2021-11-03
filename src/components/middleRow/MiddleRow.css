@@ -13,6 +13,7 @@
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     border: 0px;
+    border-radius: 5px;
     background-color: #b7b7b7;
 }
 
@@ -131,12 +132,30 @@
     padding-top: 15px;
 }
 
+.deathSaves > label {
+    align-self: end;
+}
+
 .attacksAndSpells {
     border: 1px solid black;
     border-radius: 15px;
     display: grid;
     grid-template-rows: repeat(8, 1fr);
-    grid-row-gap: 10px
+    grid-row-gap: 10px;
+    padding: 5px;
+}
+
+.weapon {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-column-gap: 10px;
+    justify-items: center;
+}
+
+.weapon > textArea {
+    max-width: 90%;
+    text-align: center;
+    font-size: 15px;
 }
 
 #equipment {
@@ -150,7 +169,7 @@
 
 #currency {
     display: grid;
-    grid-template-rows: repeat(6 1fr);
+    grid-template-rows: repeat(6, 1fr);
 }
 
 .currencyBadge {

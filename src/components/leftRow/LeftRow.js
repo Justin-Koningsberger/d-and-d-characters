@@ -9,7 +9,7 @@ import './LeftRow.css'
 
 const LeftRow = () => {
   return (
-    <div className="leftRow">
+    <div className="leftRow flexRow">
       <div id="skills">
         <AbilityScoreList />
         <div id="subSkills">

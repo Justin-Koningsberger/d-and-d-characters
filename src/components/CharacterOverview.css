@@ -1,7 +1,16 @@
+* {
+    font-family: 'Baskervville', serif;
+}
+
+.flexRow {
+    flex: 0 0 33.333%;
+    min-width: 400px;
+    max-width: 33.333%;
+}
+
 .container {
     display: grid;
     grid-template-columns: 2fr 3fr;
-    grid-template-rows: 1fr;
     margin-right: 40px;
     margin-left: 40px;
     border: 1px solid black;

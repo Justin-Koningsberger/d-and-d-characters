@@ -12,10 +12,6 @@ const CharacterOverview = (props) => {
     props.updateCharacter(data)
   }
 
-  if (navigator.userAgent.includes('Mobi')) {
-    alert('This site is best viewed on a desktop')
-  }
-
   return (
     <div className="container">
       <div className="characterName">

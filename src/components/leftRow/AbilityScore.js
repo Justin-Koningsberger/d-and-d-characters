@@ -20,8 +20,9 @@ const AbilityScore = (props) => {
       <div className="modifier">
         {signedNumber(modifier)}
       </div>
-      <div className="score">
+      <div>
         <input
+          className="score"
           type="number"
           min="0"
           value={abilityScore || ''}

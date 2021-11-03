@@ -15,9 +15,7 @@ const Weapon = (props) => {
   }
 
   return (
-    <div style={{display: 'grid',
-        gridTemplateColumns: '2fr 1fr 2fr',
-        gridColumnGap: '10px'}}>
+    <div className="weapon">
       <textarea
         className='name'
         value={character.weapons[index].name || ''}
@@ -25,7 +23,7 @@ const Weapon = (props) => {
       />
       <input
         className='bonus'
-        style={{width: '75px'}}
+        style={{width: '75px', textAlign: 'center'}}
         type='number'
         value={character.weapons[index].bonus || ''}
         onChange={e => updateWeapon(e)}

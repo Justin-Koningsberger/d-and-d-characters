@@ -4,7 +4,7 @@ import './RightRow.css'
 
 const RightRow = () => {
   return (
-    <div className="rightRow">
+    <div className="rightRow flexRow">
       <div className="personalStuff">
         <TextField name="personalityTraits" label="personality traits" />
         <TextField name="ideals" label="ideals" />

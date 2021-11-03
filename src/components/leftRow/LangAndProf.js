@@ -13,18 +13,18 @@ const LangAndProf = (props) => {
   }
 
   return (
-    <div id="langAndProf">
+    <div className="langAndProf">
       <div>
         <label>Proficiencies</label>
         <textarea
-          id="proficiencies"
+          className="proficiencies"
           value={character.attributes.proficiencies}
           onChange={e => updateCharacter(e)} />
       </div>
       <div>
         <label>Languages</label>
         <textarea
-          id="languages"
+          className="languages"
           value={character.attributes.languages}
           onChange={e => updateCharacter(e)} />
       </div>

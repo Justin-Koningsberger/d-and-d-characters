@@ -5,6 +5,7 @@ import './LeftRow.css'
 const Skill = (props) => {
   const character = useSelector((state) => state)
   const skillName = props.name
+  const skillLabel = props.label
   const skillChecked = skillName.concat('Checked')
 
   const updateCharacter = (event) => {
@@ -41,7 +42,6 @@ const Skill = (props) => {
         defaultChecked={inputChecked}
         onClick={e => updateCharacter(e)}>
       </input>
-      {/* If I use my signedNumber utility, I can't use type=number */}
       <input
         className="skillInput"
         id={skillName}
@@ -49,7 +49,7 @@ const Skill = (props) => {
         value={skillScore || ''}
         onChange={e => updateCharacter(e)}>
       </input>
-      <label>{skillName}</label>
+      <label>{skillLabel}</label>
     </div>
   )
 }

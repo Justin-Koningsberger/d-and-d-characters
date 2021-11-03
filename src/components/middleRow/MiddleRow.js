@@ -8,7 +8,7 @@ import './MiddleRow.css'
 
 const MiddleRow = () => {
   return (
-    <div className="middleRow">
+    <div className="middleRow flexRow">
       <div id="combatInformation">
         <NumberField label="armor class" name="armorClass" />
         <NumberField label="initiative" name="initiative" />
