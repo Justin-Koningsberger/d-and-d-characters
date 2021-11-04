@@ -19,7 +19,7 @@ const Character = () => {
   }, [dispatch, id])
 
   useEffect(() => {
-    if (navigator.userAgentData.mobile) {
+    if (navigator.userAgent.includes('Mobi')) {
       alert('This site is best viewed on a desktop')
     }
   }, [])
