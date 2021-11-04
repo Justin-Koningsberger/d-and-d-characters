@@ -26,12 +26,14 @@ const Skill = (props) => {
   }
 
   const skillScore = character.attributes[skillName]
-  // Backend returns skillChecked as string, eval should be safe here
-  // value can only be 'true' or 'false'
-  const inputChecked = character.attributes[skillChecked] === undefined
-    ? false
-    /* eslint-disable no-eval */
-    : eval(character.attributes[skillChecked])
+  let inputChecked
+
+  if (character.attributes[skillChecked] === 'true') {
+    inputChecked = true
+  }
+  else {
+    inputChecked = false
+  }
 
   return (
     <div id={skillName}>

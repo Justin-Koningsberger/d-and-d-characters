@@ -13,13 +13,11 @@ const DeathSaves = (props) => {
   }
 
   const inputChecked = (name) => {
-    if (character.attributes[name] === undefined) {
-      return false
-
+    if (character.attributes[name] === 'true') {
+      return true
     }
     else {
-      /* eslint-disable no-eval */
-      return eval(character.attributes[name])
+      return false
     }
   }
 
